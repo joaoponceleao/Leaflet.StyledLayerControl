@@ -1,7 +1,7 @@
 L.Control.StyledLayerControl = L.Control.Layers.extend({
 		options : {
 			collapsed : true,
-			position : 'topright',
+			position : 'topleft',
 			autoZIndex : true
 		},
 
@@ -83,7 +83,7 @@ L.Control.StyledLayerControl = L.Control.Layers.extend({
 		},	
 
 		_initLayout : function () {
-			var className = 'leaflet-control-layers',
+			var className = 'leaflet-bar leaflet-control-layers',
 			container = this._container = L.DomUtil.create('div', className);
 
 			//Makes this work on IE10 Touch devices by stopping it from firing a mouseout event when the touch is released
@@ -109,8 +109,9 @@ L.Control.StyledLayerControl = L.Control.Layers.extend({
 					.on(container, 'mouseover', this._expand, this)
 					.on(container, 'mouseout', this._collapse, this);
 				}
-				var link = this._layersLink = L.DomUtil.create('a', className + '-toggle', container);
+				var link = this._layersLink = L.DomUtil.create('a', 'geo-layers', container);
 				link.href = '#';
+				link.innerHTML = '<div class="icon-il icon-il-layers"</div>'
 				link.title = 'Layers';
 
 				if (L.Browser.touch) {

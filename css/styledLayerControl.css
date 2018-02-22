@@ -5,7 +5,8 @@
 	overflow-x: hidden;
 	height: auto;
 }
-.ac-container label{
+
+div[id^="leaflet-control-accordion-layers"] > label {
 	padding: 5px 30px 0 5px;
 	position: relative;
 	z-index: 20;
@@ -20,8 +21,12 @@
 		0px 0px 0px 1px rgba(155,155,155,0.3), 
 		1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
 		0px 2px 2px rgba(0,0,0,0.1);
+    box-sizing: content-box;
+    cursor:pointer;
+    width: auto;
+    margin: 0;
 }
-.ac-container label:hover{
+div[id^="leaflet-control-accordion-layers"] > label:hover {
 	background: #fff;
 }
 .ac-container input.menu:checked + label,
@@ -29,21 +34,21 @@
 	background: #cbcbcb;
 	color: #000;
 	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
-	box-shadow: 
-		0px 0px 0px 1px rgba(155,155,155,0.3), 
+	box-shadow:
+		0px 0px 0px 1px rgba(155,155,155,0.3),
 		0px 2px 2px rgba(0,0,0,0.1);
 }
-/*.ac-container label:hover:after,
-.ac-container input.menu:checked + label:hover:after{
+/*.ac-container div[id^="leaflet-control-accordion-layers"] > label:hover:after,
+.ac-container input.menu:checked + div[id^="leaflet-control-accordion-layers"] > label:hover:after{
 	content: '';
 	position: absolute;
 	width: 24px;
 	height: 24px;
-	right: 5px;
-	top: 5px;
-	background: transparent url(images/arrow_down.png) no-repeat center center;	
+	right: 13px;
+	top: 7px;
+	background: transparent url(images/arrow_down.png) no-repeat center center;
 }
-.ac-container input.menu:checked + label:hover:after{
+.ac-container input.menu:checked + div[id^="leaflet-control-accordion-layers"] > label:hover:after{
 	background-image: url(images/arrow_up.png);
 }*/
 .ac-container input.menu{
@@ -54,6 +59,8 @@
 	margin-top: -1px;
 	overflow: hidden;
 	height: 0px;
+    padding: 0px;
+    line-height: 0px;
 	position: relative;
 	z-index: 10;
 	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
@@ -62,6 +69,7 @@
 	-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
+
 .ac-container input.menu:checked ~ article{
 	-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
 	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
@@ -70,28 +78,60 @@
 	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
 	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
 }
+
 .ac-container input.menu:checked ~ article.ac-large{
 	height: auto;
 	max-height : 100px;
 	padding: 5px 0 5px 5px;
 	overflow-y: auto;
+    line-height: 18px;
 }
+
+.ac-container article label {
+    display: inline;
+    cursor: pointer;
+}
+
+.ac-container .group-toggle-container {
+    text-align: right;
+    margin-right: 3px;
+    line-height: 0px;
+    display: none;
+    height: 20px;
+}
+
+.ac-container input.menu:checked ~ .group-toggle-container {
+    display: block;
+	line-height: 1em;
+}
+
 .menu-item-radio{
 	font-size: 11px;
 }
+
 .menu-item-checkbox{
 	font-size: 11px;	
 }
 /*.bt_delete{
     position: relative;
 	float: right;
-	background-image: url(images/delete.png); 
-    background-color: transparent; 
-    background-repeat: no-repeat;  
-    background-position: 0px 0px;  
-    border: none;           
-    cursor: pointer;        
-    height: 16px;   
-    width: 16px;	
-    vertical-align: middle; 
+	background-image: url(images/delete.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+}
+
+.leaflet-control-layers-expanded {
+    padding: 5px;
+}
+
+.leaflet-control-layers:hover {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	background: #e0e3ec url(images/bgnoise_lg.jpg) repeat top left;
+	border-radius: 5px;
 }*/

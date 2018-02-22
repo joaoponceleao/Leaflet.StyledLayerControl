@@ -1,0 +1,12 @@
+{
+  "name": "LeafletSLControl",
+  "version": "0.0.1",
+  "description": "Fork of davidcustodio/Leaflet.StyledLayerControl",
+  "main": "src/styledLayerControl.js",
+  "style": "css/styledLayerControl.css",
+  "repository": "git@github.com:joaoponceleao/Leaflet.StyledLayerControl.git",
+  "author": "Joao Ponce de Leao Paulouro <joao.ponceleao@gmail.com>",
+  "license": "CC BY 3.0",
+  "private": true,
+  "files": ["src/styledLayerControl.js", "css/styledLayerControl.css", "css/images/*"]
+}
